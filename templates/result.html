@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Classification Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        h1 {
+            font-size: 32px;
+            color: #4CAF50;
+        }
+        img {
+            max-width: 300px;
+            margin-top: 20px;
+            border-radius: 10px;
+            border: 2px solid #4CAF50;
+        }
+        p {
+            font-size: 22px;
+            margin-top: 15px;
+        }
+        .confidence {
+            color: #ff9800;
+            font-weight: bold;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 18px;
+            text-decoration: none;
+            color: #2196F3;
+            border: 1px solid #2196F3;
+            padding: 8px 16px;
+            border-radius: 5px;
+        }
+        a:hover {
+            background-color: #2196F3;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>FRUIT DETECTION SYSTEM</h1>
+    <p><strong>Predicted Fruit:</strong> {{ fruit }}</p>
+    <p class="confidence"><strong>Confidence:</strong> {{ confidence|round(2) }}%</p>
+    <img src="{{ url_for('static', filename=image) }}" alt="Uploaded Fruit">
+    <br>
+    <a href="/">Upload Another Image</a>
+</body>
+</html>
