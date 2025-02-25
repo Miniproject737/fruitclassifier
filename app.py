@@ -65,4 +65,5 @@ def predict():
     return render_template("result.html", fruit=predicted_label, confidence=confidence, image=f"uploads/{filename}")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+     port = int(os.environ.get("PORT", 5000))  # Railway provides a PORT variable
+    app.run(host="0.0.0.0", port=port)
